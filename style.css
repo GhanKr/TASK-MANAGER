@@ -1,0 +1,46 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.toolbox-Container{
+    height: 5rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+.toolbox-Container > *{
+    margin-left: 4rem;
+    border-radius: 4px;
+}
+.toolbox-priorityContainer{
+    height: 3.5rem;
+    width: 18rem;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.action-btn-container{
+    height:3.5rem;
+    width: 7rem;
+    background-color: red;
+}
+.color{
+    height: 1.5rem;
+    width: 2rem;
+}
+.lightpink{
+    background-color: lightpink;
+}
+.lightgreen{
+    background-color: lightgreen;
+}
+.lightblue{
+    background-color: lightblue;
+}
+.black{
+    background-color: black;
+}
