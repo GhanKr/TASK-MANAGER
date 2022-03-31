@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ToDoList Manager</title>
     
 </head>
@@ -18,9 +19,30 @@
  
         </div>
         <div class="action-btn-container">
-            <div class="add-btn"></div>
-            <div class="remove-btm"></div>
+            <div class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="remove-btm">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
         </div>
     </div>
+    <div class="main-cont">
+        <div class="task">
+            <div class="task-priority"></div>
+            <div class="task-id"></div>
+            <div class="task-area"></div>
+        </div>
+    </div>
+    <div class="modal-cont">
+        <textarea name="textarea" spellcheck="false" placeholder="Enter your task" class="textarea-cont"></textarea>
+        <div class="task-priority-cont">
+            <div class="lightpink priority-color"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="active black priority-color"></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
