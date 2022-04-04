@@ -103,6 +103,8 @@ body{
     display: flex;
     gap: 2rem;
     justify-content: center;
+    padding:2rem;
+    flex-wrap: wrap;
 }
 .task{
     height: 12rem;
@@ -111,7 +113,6 @@ body{
 }
 .task-priority{
     height: 1rem;
-    background-color: black;
 }
 .task-id{
     height: 2rem;
