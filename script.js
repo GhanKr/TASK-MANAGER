@@ -8,6 +8,8 @@ let colorarr=document.querySelectorAll('.priority-color');
 let taskvalue=document.querySelector('.textarea-cont');
 let flag=false;
 let removeflag=false;
+let lock='fa-lock'
+let unlock='fa-lock-open'
 addbtn.addEventListener('click', function(e){
     flag=!flag;
     if(flag){
@@ -53,12 +55,55 @@ colorarr.forEach(function(colorElem){
         priorityColor=colorElem.classList[0];
     })
 })
+
 function createTicket(ticket_priorityColor, value){
     let ticketcontainer=document.createElement('div');
     ticketcontainer.setAttribute('class','task');
     ticketcontainer.innerHTML= `<div class="task-priority ${ticket_priorityColor}"></div>
-    <div class="task-id"></div>
-    <div class="task-area">${value}</div>`
+    <div class="task-id">#sampleid000</div>
+    <div class="task-area">${value}</div>
+    <div class="ticket-lock">
+    <i class="fa-solid fa-lock"></i>
+</div>`
     maincont.appendChild(ticketcontainer);
     removetask(ticketcontainer);
+    handleLock(ticketcontainer);
+    priorityChange(ticketcontainer);
 }
+
+function handleLock(tickett){
+    let ticketlock=tickett.querySelector('.ticket-lock');
+    let lockelement=ticketlock.children[0]
+    let taskarea=tickett.querySelector('.task-area')
+    let toedit=taskarea.children[0]
+
+    lockelement.addEventListener('click', function(e){
+        if(lockelement.classList.contains(lock)){
+            lockelement.classList.remove(lock)
+            lockelement.classList.add(unlock)
+            taskarea.setAttribute('contenteditable', 'true')
+        }
+        else{
+            lockelement.classList.remove(unlock)
+            lockelement.classList.add(lock)
+            taskarea.setAttribute('contenteditable', 'false')
+        }
+    })
+}
+
+function priorityChange(ticketpriority){
+    let tochangecolor=ticketpriority.querySelector('.task-priority');
+    
+    tochangecolor.addEventListener('click', function(e){
+        let classcolor=tochangecolor.classList[1];
+        tochangecolor.classList.remove(classcolor);
+        let colorIndex=colors.findIndex(function(color){
+            return classcolor==color
+        })
+        colorIndex++;
+        colorIndex=colorIndex%colors.length;
+        tochangecolor.classList.add(colors[colorIndex])
+
+    })
+}
+
