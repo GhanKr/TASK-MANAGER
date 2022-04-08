@@ -68,7 +68,6 @@ function createTicket(ticket_priorityColor, value){
     maincont.appendChild(ticketcontainer);
     removetask(ticketcontainer);
     handleLock(ticketcontainer);
-    priorityChange(ticketcontainer);
 }
 
 function handleLock(tickett){
@@ -82,6 +81,7 @@ function handleLock(tickett){
             lockelement.classList.remove(lock)
             lockelement.classList.add(unlock)
             taskarea.setAttribute('contenteditable', 'true')
+            priorityChange(tickett)
         }
         else{
             lockelement.classList.remove(unlock)
