@@ -10,6 +10,9 @@ let flag=false;
 let removeflag=false;
 let lock='fa-lock'
 let unlock='fa-lock-open'
+let toolboxColors=document.querySelectorAll('.color')
+
+// to identify when add button is clicked
 addbtn.addEventListener('click', function(e){
     flag=!flag;
     if(flag){
@@ -20,6 +23,8 @@ addbtn.addEventListener('click', function(e){
     }
 
 })
+// to remove existing tickets on clicking it
+
 removebtn.addEventListener('click', function(e){
     removeflag=!removeflag;
     if(removeflag){
@@ -29,6 +34,8 @@ removebtn.addEventListener('click', function(e){
      removebtn.style.color='black';
     }
 })
+
+//after filling out the ticket details remove insert details ticket popup
 function removetask(toremoveTicket){
     toremoveTicket.addEventListener('click',function(e){
         if(removeflag){
@@ -39,7 +46,7 @@ function removetask(toremoveTicket){
 modal.addEventListener('keydown', function(e){
     let key=e.key;
     if(key=='Shift'){
-        createTicket(priorityColor, taskvalue.value);
+        createTicket(priorityColor, taskvalue.value, shortid());
         modal.style.display='none';
         flag=false;
         taskvalue.value=null;
@@ -55,13 +62,14 @@ colorarr.forEach(function(colorElem){
         priorityColor=colorElem.classList[0];
     })
 })
+// to create ticket in main div after filling out ticket form
 
-function createTicket(ticket_priorityColor, value){
+function createTicket(ticket_priorityColor, value, taskId){
     let ticketcontainer=document.createElement('div');
     ticketcontainer.setAttribute('class','task');
     ticketcontainer.innerHTML= `<div class="task-priority ${ticket_priorityColor}"></div>
-    <div class="task-id">#sampleid000</div>
-    <div class="task-area">${value}</div>
+    <div class="task-id">#${taskId}</div>
+    <div class="task-area">#${value}</div>
     <div class="ticket-lock">
     <i class="fa-solid fa-lock"></i>
 </div>`
@@ -69,7 +77,7 @@ function createTicket(ticket_priorityColor, value){
     removetask(ticketcontainer);
     handleLock(ticketcontainer);
 }
-
+// to make a ticket editable or uneditable with lock button 
 function handleLock(tickett){
     let ticketlock=tickett.querySelector('.ticket-lock');
     let lockelement=ticketlock.children[0]
@@ -90,7 +98,7 @@ function handleLock(tickett){
         }
     })
 }
-
+//to change priority colors on clicking priority bar
 function priorityChange(ticketpriority){
     let tochangecolor=ticketpriority.querySelector('.task-priority');
     
@@ -106,4 +114,11 @@ function priorityChange(ticketpriority){
 
     })
 }
+// to filter out and display the respective priority colors ticket when toolbox is clicked
+ for(let i=0;i<toolboxColors.length;i++){
+     toolboxColors[i].addEventListener('click',function(e){
+          let clickedColor=toolboxColors[i].classList[0]
+          console.log(clickedColor)
+     })
+ }
 
