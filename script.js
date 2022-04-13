@@ -80,8 +80,10 @@ function createTicket(ticket_priorityColor, value, taskId){
     maincont.appendChild(ticketcontainer);
     removetask(ticketcontainer);
     handleLock(ticketcontainer);
-    if(!taskId)
+    if(!taskId){
     ticketArr.push({ticket_priorityColor,value,taskId:id})
+    localStorage.setItem('tickets', JSON.stringify(ticketArr))
+    }
 }
 // to make a ticket editable or uneditable with lock button 
 function handleLock(tickett){
@@ -155,4 +157,9 @@ for (let i = 0; i < toolboxColors.length; i++) {
     }
     })
     }
-
+    if(localStorage.getItem('tickets')){
+        ticketArr=JSON.parse(localStorage.getItem('tickets'))
+        ticketArr.forEach(function(ticketArrss){
+        createTicket( ticketArrss.ticket_priorityColor, ticketArrss.value, ticketArrss.taskId)
+        })
+    }
