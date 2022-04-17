@@ -1,21 +1,31 @@
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0px;
     padding: 0px;
 }
-.toolbox-Container{
+
+.toolbox-Container {
     height: 5rem;
     background-color: #4b4b4b;
     display: flex;
     align-items: center;
 }
-.toolbox-Container > *{
+
+#Title {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+}
+
+.toolbox-Container>* {
     margin-left: 4rem;
     border-radius: 4px;
 }
-.toolbox-priorityContainer{
+
+.toolbox-priorityContainer {
     height: 3.5rem;
     width: 18rem;
     background-color: #3d3d3d;
@@ -23,8 +33,9 @@ body{
     align-items: center;
     justify-content: space-around;
 }
-.action-btn-container{
-    height:3.5rem;
+
+.action-btn-container {
+    height: 3.5rem;
     width: 7rem;
     background-color: #3d3d3d;
     display: flex;
@@ -32,39 +43,46 @@ body{
     justify-content: space-around;
     font-size: 2rem;
 }
-.action-btn-container>*{
+
+.action-btn-container>* {
     height: 3.5rem;
     width: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: 2rem;
     color: #d1d8e0;
 }
-.color{
+
+.color {
     height: 1.5rem;
     width: 2rem;
 }
-.lightpink{
+
+.lightpink {
     background-color: lightpink;
 }
-.lightgreen{
+
+.lightgreen {
     background-color: lightgreen;
 }
-.lightblue{
+
+.lightblue {
     background-color: lightblue;
 }
-.black{
+
+.black {
     background-color: black;
 }
 
-.action-btn-container>*:hover{
+.action-btn-container>*:hover {
     background-color: #485460;
 }
-.toolbox-priorityContainer>*:hover{
+
+.toolbox-priorityContainer>*:hover {
     background-color: #485460;
 }
-.modal-cont{
+
+.modal-cont {
     height: 50vh;
     width: 45vw;
     background: lightblue;
@@ -74,7 +92,8 @@ body{
     left: calc((100vw - 45vw)/2);
     display: none;
 }
-.textarea-cont{
+
+.textarea-cont {
     height: 100%;
     width: 75%;
     outline: none;
@@ -85,7 +104,8 @@ body{
     resize: none;
 
 }
-.task-priority-cont{
+
+.task-priority-cont {
     height: 100%;
     width: 25%;
     display: flex;
@@ -94,45 +114,52 @@ body{
     align-items: center;
     background-color: #4b4b4b;
 }
-.priority-color{
+
+.priority-color {
     height: 3rem;
     width: 5rem;
 }
-.active{
+
+.active {
     border: 5px solid yellow;
 }
-.main-cont{
+
+.main-cont {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    padding:2rem;
+    padding: 2rem;
     flex-wrap: wrap;
 }
-.task{
+
+.task {
     height: 12rem;
     width: 15rem;
-
     background-color: #f1f2f6;
     display: flex;
     flex-direction: column;
 }
-.task-priority{
+
+.task-priority {
     height: 1rem;
 }
-.task-id{
+
+.task-id {
     height: 2rem;
     background-color: red;
     text-decoration-style: solid;
 }
-.task-area{
+
+.task-area {
     height: calc(100% - 3rem);
     font-size: 1.5rem;
-    padding: 5px; 
+    padding: 5px;
     outline: none;
     overflow: hidden;
     overflow-wrap: break-word;
 }
-.ticket-lock{
+
+.ticket-lock {
     font-size: 2rem;
     display: flex;
     justify-content: flex-end;
