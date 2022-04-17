@@ -7,7 +7,7 @@ body{
 }
 .toolbox-Container{
     height: 5rem;
-    background-color: black;
+    background-color: #4b4b4b;
     display: flex;
     align-items: center;
 }
@@ -18,7 +18,7 @@ body{
 .toolbox-priorityContainer{
     height: 3.5rem;
     width: 18rem;
-    background-color: coral;
+    background-color: #3d3d3d;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -26,7 +26,7 @@ body{
 .action-btn-container{
     height:3.5rem;
     width: 7rem;
-    background-color: red;
+    background-color: #3d3d3d;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -35,9 +35,11 @@ body{
 .action-btn-container>*{
     height: 3.5rem;
     width: 3.5rem;
+    display: flex;
     align-items: center;
     justify-content: space-around;
     font-size: 2rem;
+    color: #d1d8e0;
 }
 .color{
     height: 1.5rem;
@@ -97,7 +99,7 @@ body{
     width: 5rem;
 }
 .active{
-    border: 5px solid #d1d8e0;
+    border: 5px solid yellow;
 }
 .main-cont{
     display: flex;
@@ -120,6 +122,7 @@ body{
 .task-id{
     height: 2rem;
     background-color: red;
+    text-decoration-style: solid;
 }
 .task-area{
     height: calc(100% - 3rem);
